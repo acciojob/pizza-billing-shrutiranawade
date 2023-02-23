@@ -56,7 +56,7 @@ private boolean isBillCreated;
 
     public String getBill(){
         // your code goes here
-        if (isBillCreated) {
+        if (!isBillCreated) {
             if (isExtraCheeseAdded) {
                 this.bill = "Extra Cheese Added: 80" + "\n";}
                 if (isExtraToppingAdded) {
