@@ -17,13 +17,14 @@ private boolean isBillCreated;
         if(isVeg){
             this.price =300;
             this.toppings = 70;
-
+            this.bill = "Base Price Of The Pizza: "+this.price + "\n";
         }
         else{
         this.price = 400;
-        this.toppings = 80;
+        this.toppings = 120;
+            this.bill = "Base Price Of The Pizza: "+this.price + "\n";
     }
-        this.bill = "Base Price Of The Pizza: "+this.price;
+
     }
 
     public int getPrice(){
@@ -50,7 +51,7 @@ private boolean isBillCreated;
         // your code goes here
         if(!isTakeAway){
             this.price += 20;
-            isTakeAway =true;
+            isTakeAway = true;
         }
     }
 
@@ -58,17 +59,18 @@ private boolean isBillCreated;
         // your code goes here
         if (!isBillCreated) {
             if (isExtraCheeseAdded) {
-                this.bill = "Extra Cheese Added: 80" + "\n";}
+                this.bill += "Extra Cheese Added: 80" + "\n";}
                 if (isExtraToppingAdded) {
-                    this.bill = "Extra Toppings Added: " + this.toppings + "\n";
+                    this.bill += "Extra Toppings Added: " + this.toppings + "\n";
                 }
                 if (isTakeAway) {
-                    this.bill = "Paperbag Added: 20";
+                    this.bill += "Paperbag Added: 20"+ "\n";
                 }
-                this.bill = "Total Price: " + this.bill + "\n";
-                isBillCreated =true;
+                this.bill += "Total Price: " + this.price + "\n";
+
 
         }
+        isBillCreated =true;
         return this.bill;
     }
 }
